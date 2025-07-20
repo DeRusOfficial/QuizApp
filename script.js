@@ -49,4 +49,24 @@ let questions = [
             ],
         "rightAnswer": 0
     }
-]
+];
+
+
+
+let currentQuestion = 0;
+
+function init() {
+    document.getElementById('quantity').innerHTML = questions.length;
+
+    showQuestion();
+}
+
+function showQuestion() {
+    let question = questions[currentQuestion];
+
+    document.getElementById('question').innerHTML = question.question;
+    document.getElementById('answer_1').innerHTML = question.answers[0];
+    document.getElementById('answer_2').innerHTML = question.answers[1];
+    document.getElementById('answer_3').innerHTML = question.answers[2];
+    document.getElementById('answer_4').innerHTML = question.answers[3];
+}

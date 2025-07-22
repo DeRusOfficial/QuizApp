@@ -1,53 +1,43 @@
 let questions = [
     {
         "question": "Was ist die Hauptfunktion eines Betriebssystems?",
-        "answers": [
-            "Dokumente automatisch speichern",
-            "Internetverbindungen beschleunigen",
-            "Hardwarekomponenten steuern und Ressourcen verwalten",
-            "Grafiken für Spiele rendern"
-            ],
-        "rightAnswer": 2
+        "answer_1": "Dokumente automatisch speichern",
+        "answer_2": "Internetverbindungen beschleunigen",
+        "answer_3": "Hardwarekomponenten steuern und Ressourcen verwalten",
+        "answer_4": "Grafiken für Spiele rendern",
+        "rightAnswer": "answer_3"
     },
     {
         "question": "Welches dieser Konzepte ist ein grundlegendes Prinzip der objektorientierten Programmierung?",
-        "answers": [
-            "Vererbung",
-            "Lineare Suche",
-            "Globaler Variableneinsatz",
-            "Prozedurale Programmierung"
-            ],
-        "rightAnswer": 0
+        "answer_1": "Vererbung",
+        "answer_2": "Lineare Suche",
+        "answer_3": "Globaler Variableneinsatz",
+        "answer_4": "Prozedurale Programmierung",
+        "rightAnswer": "answer_1"
     },
     {
         "question": "Was beschreibt der Begriff 'Big O Notation' in der Informatik?",
-        "answers": [
-            "Die Größe eines Datenspeichers",
-            "Die Laufzeitkomplexität eines Algorithmus",
-            "Die Version eines Betriebssystems",
-            "Die Geschwindigkeit einer Internetverbindung"
-            ],
-        "rightAnswer": 1
+        "answer_1": "Die Größe eines Datenspeichers",
+        "answer_2": "Die Laufzeitkomplexität eines Algorithmus",
+        "answer_3": "Die Version eines Betriebssystems",
+        "answer_4": "Die Geschwindigkeit einer Internetverbindung",    
+        "rightAnswer": "answer_2"
     },
     {
         "question": "Welches Protokoll wird typischerweise für die sichere Übertragung von Daten im Internet verwendet?",
-        "answers": [
-            "FTP",
-            "HTTP",
-            "SMTP",
-            "HTTPS"
-            ],
-        "rightAnswer": 3
+        "answer_1": "FTP",
+        "answer_2": "HTTP",
+        "answer_3": "SMTP",
+        "answer_4": "HTTPS",    
+        "rightAnswer": "answer_4"
     },
     {
         "question": "Was ist ein 'Stack' in der Informatik?",
-        "answers": [
-            "Eine Datenstruktur nach dem LIFO-Prinzip",
-            "Ein spezieller Typ einer Datenbank",
-            "Ein Algorithmus zur Sortierung",
-            "Ein Maß für die Rechenleistung"
-            ],
-        "rightAnswer": 0
+        "answer_1": "Eine Datenstruktur nach dem LIFO-Prinzip",
+        "answer_2": "Ein spezieller Typ einer Datenbank",
+        "answer_3": "Ein Algorithmus zur Sortierung",
+        "answer_4": "Ein Maß für die Rechenleistung",    
+        "rightAnswer": "answer_1"
     }
 ];
 
@@ -65,8 +55,21 @@ function showQuestion() {
     let question = questions[currentQuestion];
 
     document.getElementById('question').innerHTML = question.question;
-    document.getElementById('answer_1').innerHTML = question.answers[0];
-    document.getElementById('answer_2').innerHTML = question.answers[1];
-    document.getElementById('answer_3').innerHTML = question.answers[2];
-    document.getElementById('answer_4').innerHTML = question.answers[3];
+    document.getElementById('answer_1').innerHTML = question['answer_1'];
+    document.getElementById('answer_2').innerHTML = question['answer_2'];
+    document.getElementById('answer_3').innerHTML = question['answer_3'];
+    document.getElementById('answer_4').innerHTML = question['answer_4'];
+}
+
+
+
+function answer(selection) {
+    let question = questions[currentQuestion];
+    if (selection === question.rightAnswer) {
+        document.getElementById(selection).parentElement.classList.add('bg-success');
+        console.log('Right');
+    } else {
+        document.getElementById(selection).parentElement.classList.add('bg-danger');
+        console.log('False');
+    }
 }

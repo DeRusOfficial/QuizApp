@@ -1,18 +1,32 @@
 body {
     min-height: 100vh;
-    background-color: rgb(7, 114, 163) !important;
+    background-color: rgba(7, 114, 163, 1) !important;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
+.card {
+    transition: all 0.25s;
+}
 .card_quiz {
     width: 30rem;
 }
+.card_hover:hover {
+    cursor: pointer;
+    background-color: rgba(100, 100, 255, 0.25);
+}
+
+
+.bg-success, .bg-danger {
+    color: rgba(255, 255, 255, 1) !important;
+}
+
 
 .navbar {
     background-color: rgba(7, 114, 163, 1) !important;
 }
+
 
 .footer__question {
     padding-top: 10px;

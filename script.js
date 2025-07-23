@@ -62,16 +62,11 @@ function showQuestion() {
         percent = 100;
         document.getElementById('progress-bar').innerHTML = `${percent}%`;
         document.getElementById('progress-bar').style.width = `${percent}%`;
-        document.getElementById('progress-bar').ariaValueNow = `${percent}%`;
     } else {
         percent = currentQuestion / questions.length;
         percent = Math.round(percent * 100);
         document.getElementById('progress-bar').innerHTML = `${percent}%`;
         document.getElementById('progress-bar').style.width = `${percent}%`;
-        document.getElementById('progress-bar').ariaValueNow = `${percent}%`;
-
-        console.log(percent)
-
 
         let question = questions[currentQuestion];
 

@@ -6,6 +6,10 @@ body {
     align-items: center;
 }
 
+#end-screen {
+    justify-content: center;
+}
+
 .card {
     transition: all 0.25s;
 }
